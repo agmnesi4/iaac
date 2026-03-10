@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MDEF 2026</title>
 
-  <!-- Google Fonts: Cormorant Garamond (serif letterario) + DM Sans (sans editoriale) -->
+  <!-- Fonts: Fraunces (display serif, carattere) + Syne (sans geometrico) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@200;300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100;0,9..144,300;1,9..144,100;1,9..144,300&family=Syne:wght@300;400;500&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -25,8 +25,8 @@
     <span class="nav-title">MDEF 2026</span>
   </nav>
 
-  <!-- Menu overlay: appare quando clicchi "Index" -->
-  <div class="menu-overlay" role="dialog" aria-label="Navigazione">
+  <!-- Menu overlay -->
+  <div class="menu-overlay" role="dialog" aria-label="Navigation">
     <a href="pages/term-1.html">Term One <span>01</span></a>
     <a href="pages/term-2.html">Term Two <span>02</span></a>
     <a href="pages/term-3.html">Term Three <span>03</span></a>
@@ -35,25 +35,30 @@
   </div>
 
 
-  <!-- ── HERO ──────────────────────────────────────────── -->
+  <!-- ── HERO: CONCRETE POEM ───────────────────────────── -->
   <!--
-    Prima schermata: occupa tutta l'altezza del viewport (100svh).
-    Contiene la citazione/poesia di apertura.
+    Poesia concreta ispirata alla tradizione internazionale.
+    Le parole si muovono nello spazio come nel riferimento che hai mandato.
     
-    SOSTITUISCI il testo tra i tag <p> con la tua poesia definitiva.
-    Sostituisci il <cite> con l'autore, o rimuovilo se è tuo.
+    Per cambiarla: modifica il testo dentro .concrete-poem.
+    Ogni <span class="line"> è una riga con la sua posizione.
   -->
   <section class="hero">
     <div class="hero-inner">
-      <blockquote class="hero-quote">
-        <p>
-          tutto ciò che esiste<br>
-          è già sul punto di non essere più —<br>
-          e in questo intervallo,<br>
-          chiamiamolo vita.
-        </p>
-        <!-- <cite>— Autore</cite> -->
-      </blockquote>
+      <div class="concrete-poem" aria-label="concrete poem">
+        <span class="line l1">emerge</span>
+        <span class="line l2">emerge &nbsp; submerge</span>
+        <span class="line l3">emerge &nbsp; submerge &nbsp; emerge</span>
+        <span class="line l4">submerge &nbsp; emerge &nbsp; submerge</span>
+        <span class="line l5">submerge &nbsp; emerge</span>
+        <span class="line l6">submerge</span>
+        <span class="line l7">&nbsp;</span>
+        <span class="line l8">re</span>
+        <span class="line l9">re &nbsp; emerge</span>
+        <span class="line l10">reemerge &nbsp; resubmerge &nbsp; reemerge</span>
+        <span class="line l11">resubmerge &nbsp; reemerge</span>
+        <span class="line l12">re</span>
+      </div>
     </div>
     <span class="hero-scroll" aria-hidden="true">scroll ↓</span>
   </section>

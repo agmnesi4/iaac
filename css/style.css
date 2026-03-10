@@ -29,8 +29,8 @@
   --mahogany:   #3C1503;
 
   /* Tipografia */
-  --font-serif: 'Cormorant Garamond', Georgia, serif;
-  --font-sans:  'DM Sans', Helvetica, sans-serif;
+  --font-serif: 'Fraunces', Georgia, serif;
+  --font-sans:  'Syne', Helvetica, sans-serif;
 
   /* Spaziatura */
   --gap:        1px;   /* la linea tra le card */
@@ -237,6 +237,45 @@ img {
   font-weight: 400;
   color: var(--pear);
 }
+
+/* ── CONCRETE POEM ── */
+/*
+  Ogni riga è uno <span> con classe .line .lN
+  Le classi l1–l12 controllano il rientro (margin-left)
+  creando il movimento visivo della poesia concreta.
+  Modifica i margin-left per spostare le righe nello spazio.
+*/
+.concrete-poem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15em;
+}
+
+.concrete-poem .line {
+  font-family: var(--font-sans);
+  font-size: clamp(0.85rem, 1.8vw, 1.1rem);
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: var(--mahogany);
+  white-space: nowrap;
+  display: block;
+}
+
+/* Prima metà: cascade verso destra */
+.l1  { margin-left: 8%; }
+.l2  { margin-left: 14%; }
+.l3  { margin-left: 20%; }
+.l4  { margin-left: 38%; }
+.l5  { margin-left: 44%; }
+.l6  { margin-left: 50%; }
+.l7  { margin-top: 0.6em; }
+
+/* Seconda metà: cascade verso sinistra, poi si comprime */
+.l8  { margin-left: 20%; }
+.l9  { margin-left: 10%; }
+.l10 { margin-left: 2%; }
+.l11 { margin-left: 30%; }
+.l12 { margin-left: 50%; }
 
 .hero-scroll {
   position: absolute;

@@ -116,71 +116,42 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
 }
 
 
-/* ── 4. HERO TICKER ───────────────────────────────────────── */
-/*
-  Tre righe di parole animate in direzioni opposte.
-  row-right: va da sinistra verso destra
-  row-left:  va da destra verso sinistra
-  
-  Per cambiare velocità: modifica 18s (più alto = più lento)
-  Per cambiare le parole: modifica il testo dentro <span>
-*/
+/* ── 4. HERO POEM ────────────────────────────────────────── */
 .hero {
   min-height: 100svh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  overflow: hidden;
+  padding: 0 var(--pad);
   position: relative;
 }
 
-.hero-ticker-wrap {
+.hero-poem {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  width: 100%;
-  overflow: hidden;
+  align-items: flex-start;
+  margin-left: 8vw;
 }
 
-.ticker-row {
-  display: flex;
-  gap: 3rem;
-  width: max-content;
-  white-space: nowrap;
-}
-
-.ticker-row span {
-  font-family: var(--font-display);
-  font-size: clamp(2.5rem, 6vw, 5rem);
-  font-weight: 900;
-  letter-spacing: -0.02em;
+.hero-poem span {
+  font-family: 'Big Shoulders Display', sans-serif;
+  font-size: clamp(3.5rem, 9vw, 8rem);
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.01em;
   color: var(--mahogany);
-  text-shadow: 2px 0 0 var(--pear), 0 2px 0 var(--rose);
+  opacity: 0;
+  transform: translateY(12px);
+  animation: fadeUp 0.6s var(--ease) forwards;
 }
 
-/* Riga centrale: colore diverso */
-.ticker-row:nth-child(2) span {
-  color: var(--pear);
-  text-shadow: 2px 0 0 var(--mahogany), 0 2px 0 var(--champagne);
-}
-
-@keyframes tickerRight {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
-}
-
-@keyframes tickerLeft {
-  from { transform: translateX(-50%); }
-  to   { transform: translateX(0); }
-}
-
-.row-right { animation: tickerRight 18s linear infinite; }
-.row-left  { animation: tickerLeft  18s linear infinite; }
-
-/* Pausa al hover */
-.hero-ticker-wrap:hover .ticker-row {
-  animation-play-state: paused;
-}
+/* ogni parola appare con un piccolo ritardo — effetto cascata */
+.hero-poem span:nth-child(1) { animation-delay: 0.1s; }
+.hero-poem span:nth-child(2) { animation-delay: 0.2s; }
+.hero-poem span:nth-child(3) { animation-delay: 0.3s; }
+.hero-poem span:nth-child(4) { animation-delay: 0.4s; }
+.hero-poem span:nth-child(5) { animation-delay: 0.5s; }
+.hero-poem span:nth-child(6) { animation-delay: 0.6s; }
 
 .hero-scroll {
   position: absolute;
@@ -191,7 +162,7 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
   letter-spacing: 0.2em;
   color: var(--pear);
   opacity: 0;
-  animation: fadeIn 1s var(--ease) 1.2s forwards;
+  animation: fadeIn 1s var(--ease) 1s forwards;
 }
 
 

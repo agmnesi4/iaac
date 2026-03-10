@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Term One — MDEF 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@200;300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <!-- NAV: il path torna alla homepage con ../ -->
+  <nav class="nav">
+    <a href="../index.html" class="nav-index">← Index</a>
+    <span class="nav-title">MDEF 2026</span>
+  </nav>
+
+
+  <main class="page-wrapper">
+
+    <!-- ── HEADER EDITORIALE ──────────────────────────────── -->
+    <!--
+      Layout a tre colonne ispirato al riferimento zine.
+      Sinistra: nome sezione  |  Centro: etichetta  |  Destra: numero
+    -->
+    <header class="page-header reveal">
+      <span class="page-header-left">Term One</span>
+      <span class="page-header-center">MDEF 2026</span>
+      <span class="page-header-right">01</span>
+    </header>
+
+
+    <!-- ── BODY: TESTO + IMMAGINE ─────────────────────────── -->
+    <!--
+      Due colonne come nella reference zine.
+      Colonna sinistra: testo introduttivo
+      Colonna destra: grande immagine (placeholder champagne per ora)
+      
+      COME AGGIUNGERE UN'IMMAGINE:
+      Dentro .page-image-col, aggiungi:
+      <img src="../images/term1-hero.jpg" alt="Term One">
+    -->
+    <div class="page-body">
+
+      <div class="page-text-col reveal">
+        <p class="page-intro">
+          <strong>Benvenuto nel Term One.</strong> Questo spazio raccoglie
+          i lavori, le riflessioni e i processi del primo trimestre del
+          Master in Design for Emergent Futures.
+        </p>
+
+        <p class="page-text">
+          <!-- 
+            SOSTITUISCI questo testo con la tua descrizione del termine.
+            Cosa hai esplorato? Quali domande ti porti? 
+            Quali metodi hai usato?
+          -->
+          Qui andrà la tua descrizione del Term One. Cosa hai studiato,
+          quali workshop hai fatto, quali prospettive ti hanno cambiato.
+          Puoi scrivere in modo personale, come un diario, o più formale,
+          come un abstract. Il font è Cormorant Garamond — legge bene
+          anche per testi lunghi.
+        </p>
+      </div>
+
+      <div class="page-image-col reveal">
+        <!-- Immagine placeholder — sostituisci con la tua -->
+        <!-- <img src="../images/term1-hero.jpg" alt="Term One"> -->
+      </div>
+
+    </div>
+
+
+    <!-- ── SEZIONE PROGETTI ────────────────────────────────── -->
+    <section class="projects-section">
+      <p class="projects-label reveal">Progetti del trimestre</p>
+
+      <div class="projects-grid">
+
+        <!-- 
+          TEMPLATE PER UN PROGETTO:
+          Duplica questo blocco per ogni progetto del term.
+          
+          Struttura:
+          - .project-card: il contenitore (puoi aggiungere background-image)
+          - .project-card-info: overlay con titolo e categoria
+        -->
+
+        <div class="project-card reveal">
+          <!-- <img src="../images/project-1.jpg" alt="Nome progetto"> -->
+          <div class="project-card-info">
+            <h3>Titolo Progetto 01</h3>
+            <span>categoria · anno</span>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-card-info">
+            <h3>Titolo Progetto 02</h3>
+            <span>categoria · anno</span>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-card-info">
+            <h3>Titolo Progetto 03</h3>
+            <span>categoria · anno</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ── NAVIGAZIONE TRA TERM ────────────────────────────── -->
+    <nav class="page-nav" aria-label="Navigazione tra sezioni">
+      <a href="../index.html">← Torna all'index</a>
+      <a href="term-2.html">Term Two →</a>
+    </nav>
+
+  </main>
+
+  <footer class="site-footer">
+    <span>Term One</span>
+    <span>IAAC · Barcelona · 2026</span>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

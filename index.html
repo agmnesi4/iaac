@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MDEF 2026</title>
+
+  <!-- Google Fonts: Cormorant Garamond (serif letterario) + DM Sans (sans editoriale) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@200;300;400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ── NAVIGAZIONE FISSA ─────────────────────────────── -->
+  <!--
+    Il nav è position: fixed — rimane sempre in cima.
+    La classe .scrolled viene aggiunta da JavaScript
+    quando l'utente scorre oltre 80px.
+  -->
+  <nav class="nav">
+    <button class="nav-index" id="menuToggle" aria-label="Apri menu">Index</button>
+    <span class="nav-title">MDEF 2026</span>
+  </nav>
+
+  <!-- Menu overlay: appare quando clicchi "Index" -->
+  <div class="menu-overlay" role="dialog" aria-label="Navigazione">
+    <a href="pages/term-1.html">Term One <span>01</span></a>
+    <a href="pages/term-2.html">Term Two <span>02</span></a>
+    <a href="pages/term-3.html">Term Three <span>03</span></a>
+    <a href="pages/portfolio.html">Portfolio <span>04</span></a>
+    <a href="pages/notes.html">Notes <span>05</span></a>
+  </div>
+
+
+  <!-- ── HERO ──────────────────────────────────────────── -->
+  <!--
+    Prima schermata: occupa tutta l'altezza del viewport (100svh).
+    Contiene la citazione/poesia di apertura.
+    
+    SOSTITUISCI il testo tra i tag <p> con la tua poesia definitiva.
+    Sostituisci il <cite> con l'autore, o rimuovilo se è tuo.
+  -->
+  <section class="hero">
+    <div class="hero-inner">
+      <blockquote class="hero-quote">
+        <p>
+          tutto ciò che esiste<br>
+          è già sul punto di non essere più —<br>
+          e in questo intervallo,<br>
+          chiamiamolo vita.
+        </p>
+        <!-- <cite>— Autore</cite> -->
+      </blockquote>
+    </div>
+    <span class="hero-scroll" aria-hidden="true">scroll ↓</span>
+  </section>
+
+
+  <!-- ── INDEX GRID ─────────────────────────────────────── -->
+  <!--
+    Griglia editoriale con le cinque sezioni del sito.
+    
+    Struttura CSS:
+    - Ogni .grid-item è una card cliccabile che porta alla pagina
+    - .grid-item-image è il placeholder colorato (sostituisci con <img>)
+    - Le classi --1 --2 --3 --4 --5 definiscono posizione e stile
+    
+    Per aggiungere una vera immagine al posto del placeholder:
+    <div class="grid-item-image">
+      <img src="../images/nome-immagine.jpg" alt="Descrizione">
+    </div>
+  -->
+  <section class="index-grid" aria-label="Sezioni del sito">
+
+    <!-- Term One -->
+    <a href="pages/term-1.html" class="grid-item grid-item--1 reveal">
+      <div class="grid-item-header">
+        <span class="grid-num">01</span>
+      </div>
+      <div class="grid-item-image">
+        <!-- Placeholder — sostituisci con <img src="images/term1.jpg" alt="Term One"> -->
+      </div>
+      <div class="grid-item-footer">
+        <h2 class="grid-title">Term One</h2>
+        <p class="grid-sub">Design for Emergent Futures</p>
+      </div>
+    </a>
+
+    <!-- Term Two -->
+    <a href="pages/term-2.html" class="grid-item grid-item--2 reveal">
+      <div class="grid-item-header">
+        <span class="grid-num">02</span>
+      </div>
+      <div class="grid-item-image"></div>
+      <div class="grid-item-footer">
+        <h2 class="grid-title">Term Two</h2>
+        <p class="grid-sub">Design for Emergent Futures</p>
+      </div>
+    </a>
+
+    <!-- Term Three -->
+    <a href="pages/term-3.html" class="grid-item grid-item--3 reveal">
+      <div class="grid-item-header">
+        <span class="grid-num">03</span>
+      </div>
+      <div class="grid-item-image"></div>
+      <div class="grid-item-footer">
+        <h2 class="grid-title">Term Three</h2>
+        <p class="grid-sub">Design for Emergent Futures</p>
+      </div>
+    </a>
+
+    <!-- Portfolio -->
+    <a href="pages/portfolio.html" class="grid-item grid-item--4 reveal">
+      <div class="grid-item-header">
+        <span class="grid-num">04</span>
+      </div>
+      <div class="grid-item-image"></div>
+      <div class="grid-item-footer">
+        <h2 class="grid-title">Portfolio</h2>
+        <p class="grid-sub">Works &amp; Projects</p>
+      </div>
+    </a>
+
+    <!-- Notes (card orizzontale, senza immagine) -->
+    <a href="pages/notes.html" class="grid-item grid-item--5 reveal">
+      <div class="grid-item-footer">
+        <h2 class="grid-title">Notes</h2>
+        <p class="grid-sub">Poems, thoughts &amp; links</p>
+      </div>
+      <span class="grid-num">05</span>
+    </a>
+
+  </section>
+
+
+  <!-- ── FOOTER ─────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <span>Master in Design for Emergent Futures</span>
+    <span>IAAC · Barcelona · 2026</span>
+  </footer>
+
+
+  <script src="js/main.js"></script>
+</body>
+</html>

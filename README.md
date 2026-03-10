@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # MDEF 2026 — Website
 
 Sito personale per il **Master in Design for Emergent Futures 2026** presso IAAC, Barcellona.
@@ -99,3 +100,6 @@ In `pages/notes.html`, copia il blocco `.note-entry` e incolla sopra gli altri.
 ---
 
 *IAAC · Barcelona · 2026*
+=======
+# iaac
+>>>>>>> ff2d160b4431e279ecee679b73361b3796f929b3

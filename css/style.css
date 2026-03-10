@@ -347,7 +347,16 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .page-image-col {
   position: relative;
   background-color: var(--champagne);
-  min-height: 50vh;
+  height: 40%;
+  align-self: start;
+  overflow: hidden;
+}
+
+.page-image-col img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
 }
 
 .projects-section { padding: var(--pad-lg) var(--pad); }
@@ -593,7 +602,13 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
     padding: var(--pad);
   }
 
-  .page-body { grid-template-columns: 1fr; }
+ .page-body {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  min-height: 70vh;
+  border-bottom: 1px solid var(--pistachio);
+  align-items: start;
+}
 
   .page-text-col {
     border-right: none;

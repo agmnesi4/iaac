@@ -4,28 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MDEF 2026</title>
-
-  <!-- Fonts: Fraunces (display serif, carattere) + Syne (sans geometrico) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100;0,9..144,300;1,9..144,100;1,9..144,300&family=Syne:wght@300;400;500&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@700;900&family=Syne:wght@300;400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- ── NAVIGAZIONE FISSA ─────────────────────────────── -->
-  <!--
-    Il nav è position: fixed — rimane sempre in cima.
-    La classe .scrolled viene aggiunta da JavaScript
-    quando l'utente scorre oltre 80px.
-  -->
   <nav class="nav">
-    <button class="nav-index" id="menuToggle" aria-label="Apri menu">Index</button>
+    <button class="nav-index" id="menuToggle" aria-label="Open menu">Index</button>
     <span class="nav-title">MDEF 2026</span>
   </nav>
 
-  <!-- Menu overlay -->
   <div class="menu-overlay" role="dialog" aria-label="Navigation">
     <a href="pages/term-1.html">Term One <span>01</span></a>
     <a href="pages/term-2.html">Term Two <span>02</span></a>
@@ -34,71 +24,43 @@
     <a href="pages/notes.html">Notes <span>05</span></a>
   </div>
 
-
-  <!-- ── HERO: CONCRETE POEM ───────────────────────────── -->
-  <!--
-    Poesia concreta ispirata alla tradizione internazionale.
-    Le parole si muovono nello spazio come nel riferimento che hai mandato.
-    
-    Per cambiarla: modifica il testo dentro .concrete-poem.
-    Ogni <span class="line"> è una riga con la sua posizione.
-  -->
   <section class="hero">
-    <div class="hero-inner">
-      <div class="concrete-poem" aria-label="concrete poem">
-        <span class="line l1">emerge</span>
-        <span class="line l2">emerge &nbsp; submerge</span>
-        <span class="line l3">emerge &nbsp; submerge &nbsp; emerge</span>
-        <span class="line l4">submerge &nbsp; emerge &nbsp; submerge</span>
-        <span class="line l5">submerge &nbsp; emerge</span>
-        <span class="line l6">submerge</span>
-        <span class="line l7">&nbsp;</span>
-        <span class="line l8">re</span>
-        <span class="line l9">re &nbsp; emerge</span>
-        <span class="line l10">reemerge &nbsp; resubmerge &nbsp; reemerge</span>
-        <span class="line l11">resubmerge &nbsp; reemerge</span>
-        <span class="line l12">re</span>
+    <div class="hero-ticker-wrap">
+      <div class="ticker-row row-right">
+        <span>BODY</span><span>EMERGENT</span><span>FUTURES</span>
+        <span>LOVE</span><span>RAGE</span><span>HEALING</span>
+        <span>BODY</span><span>EMERGENT</span><span>FUTURES</span>
+        <span>LOVE</span><span>RAGE</span><span>HEALING</span>
+      </div>
+      <div class="ticker-row row-left">
+        <span>HEALING</span><span>RAGE</span><span>LOVE</span>
+        <span>FUTURES</span><span>EMERGENT</span><span>BODY</span>
+        <span>HEALING</span><span>RAGE</span><span>LOVE</span>
+        <span>FUTURES</span><span>EMERGENT</span><span>BODY</span>
+      </div>
+      <div class="ticker-row row-right">
+        <span>BODY</span><span>EMERGENT</span><span>FUTURES</span>
+        <span>LOVE</span><span>RAGE</span><span>HEALING</span>
+        <span>BODY</span><span>EMERGENT</span><span>FUTURES</span>
+        <span>LOVE</span><span>RAGE</span><span>HEALING</span>
       </div>
     </div>
     <span class="hero-scroll" aria-hidden="true">scroll ↓</span>
   </section>
 
+  <section class="index-grid" aria-label="Site sections">
 
-  <!-- ── INDEX GRID ─────────────────────────────────────── -->
-  <!--
-    Griglia editoriale con le cinque sezioni del sito.
-    
-    Struttura CSS:
-    - Ogni .grid-item è una card cliccabile che porta alla pagina
-    - .grid-item-image è il placeholder colorato (sostituisci con <img>)
-    - Le classi --1 --2 --3 --4 --5 definiscono posizione e stile
-    
-    Per aggiungere una vera immagine al posto del placeholder:
-    <div class="grid-item-image">
-      <img src="../images/nome-immagine.jpg" alt="Descrizione">
-    </div>
-  -->
-  <section class="index-grid" aria-label="Sezioni del sito">
-
-    <!-- Term One -->
     <a href="pages/term-1.html" class="grid-item grid-item--1 reveal">
-      <div class="grid-item-header">
-        <span class="grid-num">01</span>
-      </div>
-      <div class="grid-item-image">
-        <!-- Placeholder — sostituisci con <img src="images/term1.jpg" alt="Term One"> -->
-      </div>
+      <div class="grid-item-header"><span class="grid-num">01</span></div>
+      <div class="grid-item-image"></div>
       <div class="grid-item-footer">
         <h2 class="grid-title">Term One</h2>
         <p class="grid-sub">Design for Emergent Futures</p>
       </div>
     </a>
 
-    <!-- Term Two -->
     <a href="pages/term-2.html" class="grid-item grid-item--2 reveal">
-      <div class="grid-item-header">
-        <span class="grid-num">02</span>
-      </div>
+      <div class="grid-item-header"><span class="grid-num">02</span></div>
       <div class="grid-item-image"></div>
       <div class="grid-item-footer">
         <h2 class="grid-title">Term Two</h2>
@@ -106,11 +68,8 @@
       </div>
     </a>
 
-    <!-- Term Three -->
     <a href="pages/term-3.html" class="grid-item grid-item--3 reveal">
-      <div class="grid-item-header">
-        <span class="grid-num">03</span>
-      </div>
+      <div class="grid-item-header"><span class="grid-num">03</span></div>
       <div class="grid-item-image"></div>
       <div class="grid-item-footer">
         <h2 class="grid-title">Term Three</h2>
@@ -118,11 +77,8 @@
       </div>
     </a>
 
-    <!-- Portfolio -->
     <a href="pages/portfolio.html" class="grid-item grid-item--4 reveal">
-      <div class="grid-item-header">
-        <span class="grid-num">04</span>
-      </div>
+      <div class="grid-item-header"><span class="grid-num">04</span></div>
       <div class="grid-item-image"></div>
       <div class="grid-item-footer">
         <h2 class="grid-title">Portfolio</h2>
@@ -130,7 +86,6 @@
       </div>
     </a>
 
-    <!-- Notes (card orizzontale, senza immagine) -->
     <a href="pages/notes.html" class="grid-item grid-item--5 reveal">
       <div class="grid-item-footer">
         <h2 class="grid-title">Notes</h2>
@@ -141,13 +96,10 @@
 
   </section>
 
-
-  <!-- ── FOOTER ─────────────────────────────────────────── -->
   <footer class="site-footer">
     <span>Master in Design for Emergent Futures</span>
     <span>IAAC · Barcelona · 2026</span>
   </footer>
-
 
   <script src="js/main.js"></script>
 </body>

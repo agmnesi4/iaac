@@ -5,14 +5,13 @@
 
 /* ── 1. VARIABILI ─────────────────────────────────────────── */
 :root {
-  --chiffon:   #F0EDE8;
-  --champagne: #FFFFFF;
-  --rose:      #E8391D;
-  --pistachio: #8C8C8C;
-  --pear:      #E8391D;
-  --mahogany:  #1A1A1A;
+  --white:   #F0EDE8;   /* sfondo principale — bianco sporco */
+  --pure:    #FFFFFF;   /* bianco puro */
+  --accent:  #E95E28;   /* arancio — solo per dettagli e hover */
+  --gray:    #8C8C8C;   /* grigio — bordi, sottotitoli */
+  --black:   #1A1A1A;   /* testo principale */
 
-  --font-display: 'Unbounded', sans-serif;
+  --font-display: 'Big Shoulders Display', sans-serif;
   --font-body:    'Syne', Helvetica, sans-serif;
 
   --gap:     1px;
@@ -25,20 +24,16 @@
 
 /* ── 2. RESET ─────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
 html { scroll-behavior: smooth; }
-
 body {
-  background-color: var(--chiffon);
-  color: var(--mahogany);
+  background-color: var(--white);
+  color: var(--black);
   font-family: var(--font-body);
   font-weight: 300;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
-
 a { color: inherit; text-decoration: none; }
-
 img { display: block; width: 100%; height: 100%; object-fit: cover; }
 
 
@@ -56,8 +51,8 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
 }
 
 .nav.scrolled {
-  background-color: var(--chiffon);
-  border-bottom: 1px solid var(--pistachio);
+  background-color: var(--white);
+  border-bottom: 1px solid var(--gray);
 }
 
 .nav-index {
@@ -67,11 +62,10 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
   cursor: pointer;
   background: none;
   border: none;
-  color: var(--mahogany);
+  color: var(--black);
   font-weight: 400;
 }
-
-.nav-index:hover { color: var(--pear); }
+.nav-index:hover { color: var(--accent); }
 
 .nav-title {
   font-family: var(--font-body);
@@ -86,14 +80,13 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
   position: fixed;
   inset: 0;
   z-index: 90;
-  background-color: var(--mahogany);
-  color: var(--chiffon);
+  background-color: var(--black);
+  color: var(--white);
   padding: var(--pad-lg) var(--pad);
   flex-direction: column;
   justify-content: center;
   gap: 1rem;
 }
-
 .menu-overlay.active { display: flex; }
 
 .menu-overlay a {
@@ -104,8 +97,7 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
   line-height: 1.1;
   transition: color 0.2s;
 }
-
-.menu-overlay a:hover { color: var(--rose); }
+.menu-overlay a:hover { color: var(--accent); }
 
 .menu-overlay a span {
   font-size: 0.9rem;
@@ -116,7 +108,7 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
 }
 
 
-/* ── 4. HERO POEM ────────────────────────────────────────── */
+/* ── 4. HERO POEM ─────────────────────────────────────────── */
 .hero {
   min-height: 100svh;
   display: flex;
@@ -134,18 +126,17 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
 }
 
 .hero-poem span {
-  font-family: 'Big Shoulders Display', sans-serif;
+  font-family: var(--font-display);
   font-size: clamp(3.5rem, 9vw, 8rem);
   font-weight: 800;
   line-height: 0.95;
   letter-spacing: -0.01em;
-  color: var(--mahogany);
+  color: var(--accent);
   opacity: 0;
   transform: translateY(12px);
   animation: fadeUp 0.6s var(--ease) forwards;
 }
 
-/* ogni parola appare con un piccolo ritardo — effetto cascata */
 .hero-poem span:nth-child(1) { animation-delay: 0.1s; }
 .hero-poem span:nth-child(2) { animation-delay: 0.2s; }
 .hero-poem span:nth-child(3) { animation-delay: 0.3s; }
@@ -160,23 +151,19 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
   font-family: var(--font-body);
   font-size: 0.7rem;
   letter-spacing: 0.2em;
-  color: var(--pear);
+  color: var(--accent);
   opacity: 0;
   animation: fadeIn 1s var(--ease) 1s forwards;
 }
 
 
 /* ── 5. INDEX GRID ────────────────────────────────────────── */
-/*
-  La griglia è 2 colonne con gap di 1px su sfondo pistachio.
-  Questo crea una linea sottile tra le card.
-*/
 .index-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  background-color: var(--pistachio);
+  background-color: var(--gray);
   gap: var(--gap);
-  border-top: var(--gap) solid var(--pistachio);
+  border-top: var(--gap) solid var(--gray);
 }
 
 .grid-item--1 { grid-column: 1; }
@@ -189,7 +176,7 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
   position: relative;
   display: flex;
   flex-direction: column;
-  background-color: var(--chiffon);
+  background-color: var(--white);
   min-height: 65vh;
   overflow: hidden;
   cursor: pointer;
@@ -202,10 +189,9 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
   flex-direction: row;
   align-items: flex-end;
   padding: var(--pad) var(--pad-lg);
-  background-color: var(--champagne);
+  background-color: var(--pure);
 }
-
-.grid-item--5:hover { background-color: var(--rose); }
+.grid-item--5:hover { background-color: var(--accent); color: var(--white); }
 
 .grid-item-header {
   display: flex;
@@ -228,13 +214,13 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
   overflow: hidden;
   transition: transform 0.6s var(--ease);
 }
-
 .grid-item:hover .grid-item-image { transform: scale(1.03); }
 
-.grid-item--1 .grid-item-image { background-color: var(--champagne); }
-.grid-item--2 .grid-item-image { background-color: var(--rose); }
-.grid-item--3 .grid-item-image { background-color: var(--pistachio); }
-.grid-item--4 .grid-item-image { background-color: var(--pear); opacity: 0.55; }
+/* Placeholder colorati per le card senza immagine */
+.grid-item--1 .grid-item-image { background-color: var(--pure); }
+.grid-item--2 .grid-item-image { background-color: var(--gray); opacity: 0.3; }
+.grid-item--3 .grid-item-image { background-color: var(--gray); opacity: 0.2; }
+.grid-item--4 .grid-item-image { background-color: var(--accent); opacity: 0.15; }
 
 .grid-item-footer {
   padding: 1.5rem var(--pad);
@@ -250,8 +236,7 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
   line-height: 1.1;
   transition: color var(--dur);
 }
-
-.grid-item:hover .grid-title { color: var(--pear); }
+.grid-item:hover .grid-title { color: var(--accent); }
 
 .grid-sub {
   font-family: var(--font-body);
@@ -264,7 +249,6 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
 }
 
 .grid-item--5 .grid-item-footer { padding: 0; }
-
 .grid-item--5 .grid-num {
   font-size: 3rem;
   letter-spacing: -0.02em;
@@ -272,7 +256,6 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
   font-weight: 300;
   align-self: center;
 }
-
 .grid-item--5 .grid-title { font-size: clamp(1.4rem, 3vw, 2.2rem); }
 
 
@@ -287,7 +270,7 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
   grid-template-columns: 1fr auto 1fr;
   align-items: baseline;
   padding: var(--pad);
-  border-bottom: 1px solid var(--pistachio);
+  border-bottom: 1px solid var(--gray);
   gap: 1rem;
 }
 
@@ -321,12 +304,13 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
   display: grid;
   grid-template-columns: 1fr 1.4fr;
   min-height: 70vh;
-  border-bottom: 1px solid var(--pistachio);
+  border-bottom: 1px solid var(--gray);
+  align-items: start;
 }
 
 .page-text-col {
   padding: var(--pad-lg) var(--pad);
-  border-right: 1px solid var(--pistachio);
+  border-right: 1px solid var(--gray);
 }
 
 .page-intro {
@@ -346,8 +330,8 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
 
 .page-image-col {
   position: relative;
-  background-color: var(--champagne);
-  height: 40%;
+  background-color: var(--pure);
+  height: 60vh;
   align-self: start;
   overflow: hidden;
 }
@@ -378,22 +362,21 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
 }
 
 .project-card {
-  background-color: var(--champagne);
+  background-color: var(--pure);
   aspect-ratio: 4/3;
   position: relative;
   overflow: hidden;
   cursor: pointer;
   transition: transform 0.4s var(--ease);
 }
-
 .project-card:hover { transform: translateY(-4px); }
 
 .project-card-info {
   position: absolute;
   bottom: 0; left: 0; right: 0;
   padding: 1rem;
-  background: linear-gradient(to top, rgba(60,21,3,0.6), transparent);
-  color: var(--chiffon);
+  background: linear-gradient(to top, rgba(26,26,26,0.7), transparent);
+  color: var(--white);
 }
 
 .project-card-info h3 {
@@ -415,7 +398,7 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
   justify-content: space-between;
   align-items: center;
   padding: 2rem var(--pad);
-  border-top: 1px solid var(--pistachio);
+  border-top: 1px solid var(--gray);
 }
 
 .page-nav a {
@@ -425,8 +408,7 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
   font-weight: 400;
   transition: color 0.2s;
 }
-
-.page-nav a:hover { color: var(--pear); }
+.page-nav a:hover { color: var(--accent); }
 
 
 /* ── 7. NOTES ─────────────────────────────────────────────── */
@@ -453,7 +435,7 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
   font-size: 0.7rem;
   letter-spacing: 0.2em;
   font-weight: 400;
-  color: var(--pear);
+  color: var(--accent);
   text-transform: uppercase;
   margin-bottom: 1rem;
 }
@@ -472,17 +454,16 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
   font-family: var(--font-body);
   font-size: 0.75rem;
   letter-spacing: 0.1em;
-  border-bottom: 1px solid var(--pistachio);
+  border-bottom: 1px solid var(--gray);
   padding-bottom: 2px;
   transition: border-color 0.2s, color 0.2s;
 }
-
-.note-link:hover { border-color: var(--pear); color: var(--pear); }
+.note-link:hover { border-color: var(--accent); color: var(--accent); }
 
 .note-divider {
   width: 2rem;
   height: 1px;
-  background-color: var(--pistachio);
+  background-color: var(--gray);
   margin: 3rem 0;
 }
 
@@ -492,12 +473,12 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: var(--gap);
-  background-color: var(--pistachio);
-  border-top: var(--gap) solid var(--pistachio);
+  background-color: var(--gray);
+  border-top: var(--gap) solid var(--gray);
 }
 
 .portfolio-item {
-  background-color: var(--chiffon);
+  background-color: var(--white);
   padding: var(--pad);
   min-height: 50vh;
   display: flex;
@@ -506,8 +487,7 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
   cursor: pointer;
   transition: background-color 0.3s var(--ease);
 }
-
-.portfolio-item:hover { background-color: var(--champagne); }
+.portfolio-item:hover { background-color: var(--pure); }
 
 .portfolio-item-num {
   font-family: var(--font-body);
@@ -518,7 +498,8 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
 
 .portfolio-item-image {
   flex: 1;
-  background-color: var(--pistachio);
+  background-color: var(--gray);
+  opacity: 0.2;
   margin: 1rem 0;
 }
 
@@ -545,7 +526,7 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
   justify-content: space-between;
   align-items: center;
   padding: 1.5rem var(--pad);
-  border-top: 1px solid var(--pistachio);
+  border-top: 1px solid var(--gray);
 }
 
 .site-footer span {
@@ -574,7 +555,6 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
   transform: translateY(24px);
   transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
 }
-
 .reveal.visible { opacity: 1; transform: none; }
 
 
@@ -602,23 +582,22 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
     padding: var(--pad);
   }
 
- .page-body {
-  display: grid;
-  grid-template-columns: 1fr 1.4fr;
-  min-height: 70vh;
-  border-bottom: 1px solid var(--pistachio);
-  align-items: start;
-}
+  .page-body {
+    grid-template-columns: 1fr;
+    align-items: unset;
+  }
 
   .page-text-col {
     border-right: none;
-    border-bottom: 1px solid var(--pistachio);
+    border-bottom: 1px solid var(--gray);
+  }
+
+  .page-image-col {
+    height: 50vw;
   }
 
   .page-header { grid-template-columns: 1fr 1fr; }
   .page-header-center { display: none; }
 
   .portfolio-grid { grid-template-columns: 1fr; }
-
-  .ticker-row span { font-size: clamp(1.8rem, 8vw, 3rem); }
 }

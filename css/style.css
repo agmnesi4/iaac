@@ -5,12 +5,12 @@
 
 /* ── 1. VARIABILI ─────────────────────────────────────────── */
 :root {
-  --chiffon:   #F8F8EB;
-  --champagne: #E4E0CF;
-  --rose:      #E4CDB7;
-  --pistachio: #D4CDAA;
-  --pear:      #95894A;
-  --mahogany:  #3C1503;
+  --chiffon:   #F0EDE8;
+  --champagne: #FFFFFF;
+  --rose:      #E8391D;
+  --pistachio: #8C8C8C;
+  --pear:      #E8391D;
+  --mahogany:  #1A1A1A;
 
   --font-display: 'Unbounded', sans-serif;
   --font-body:    'Syne', Helvetica, sans-serif;

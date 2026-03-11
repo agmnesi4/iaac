@@ -9,31 +9,31 @@
   <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800&family=Syne:wght@300;400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
   <style>
-    /* ── ZINE LAYOUT — solo per le pagine term ── */
 
-    .zine-wrapper {
+    .term-wrapper {
       min-height: 100svh;
       padding-top: 5rem;
-      background-color: var(--chiffon);
+      background-color: var(--white);
     }
 
-    /* Header: Term One | MDEF 2026 | 01 */
-    .zine-header {
+    /* ── HEADER ── */
+    .term-header {
       display: grid;
       grid-template-columns: 1fr auto 1fr;
       align-items: baseline;
       padding: 2rem var(--pad) 1.5rem;
-      border-bottom: 1px solid var(--mahogany);
+      border-bottom: 1px solid var(--gray);
     }
 
-    .zine-header-left {
-      font-family: var(--font-body);
-      font-size: clamp(1.8rem, 4vw, 3.5rem);
-      font-weight: 300;
+    .term-header-left {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 4rem);
+      font-weight: 700;
       letter-spacing: -0.02em;
+      color: var(--black);
     }
 
-    .zine-header-center {
+    .term-header-center {
       font-family: var(--font-body);
       font-size: 0.7rem;
       letter-spacing: 0.25em;
@@ -41,120 +41,129 @@
       opacity: 0.4;
     }
 
-    .zine-header-right {
+    .term-header-right {
       font-family: var(--font-body);
-      font-size: clamp(1.8rem, 4vw, 3.5rem);
+      font-size: clamp(1rem, 2vw, 1.5rem);
       font-weight: 300;
-      letter-spacing: -0.02em;
       text-align: right;
       opacity: 0.25;
     }
 
-    /* Spread: due colonne come nella reference */
-    .zine-spread {
+    /* ── SPREAD: immagine sinistra | testo destra ── */
+    /*
+      Ispirato alla reference: foto occupa metà pagina in altezza fissa,
+      testo a destra con intro + lista numerata
+    */
+    .term-spread {
       display: grid;
-      grid-template-columns: 1fr 1px 1fr;
-      /* la colonna centrale da 1px è il divisore verticale */
-      min-height: 75vh;
-      border-bottom: 1px solid var(--mahogany);
+      grid-template-columns: 1fr 1fr;
+      height: 85vh;
+      border-bottom: 1px solid var(--gray);
     }
 
-    /* Linea verticale divisoria */
-    .zine-divider {
-      background-color: var(--mahogany);
-      opacity: 0.15;
-    }
-
-    /* ── Pagina sinistra: testo ── */
-    .zine-left {
-      padding: var(--pad-lg) var(--pad);
+    /* Immagine sinistra — occupa tutta l'altezza dello spread */
+    .term-photo {
       position: relative;
-    }
-
-    .zine-page-num {
-      position: absolute;
-      bottom: var(--pad);
-      font-family: var(--font-body);
-      font-size: 0.7rem;
-      letter-spacing: 0.15em;
-      opacity: 0.3;
-    }
-
-    .zine-page-num--left { left: var(--pad); }
-    .zine-page-num--right { right: var(--pad); }
-
-    .zine-intro {
-      font-family: var(--font-body);
-      font-size: 0.95rem;
-      font-weight: 400;
-      line-height: 1.75;
-      margin-bottom: 1.2rem;
-      /* giustificato come nella reference */
-      text-align: justify;
-      hyphens: auto;
-    }
-
-    .zine-intro strong {
-      font-weight: 600;
-    }
-
-    .zine-body-text {
-      font-family: var(--font-body);
-      font-size: 0.85rem;
-      line-height: 1.85;
-      text-align: justify;
-      hyphens: auto;
-      opacity: 0.75;
-      column-count: 1;
-    }
-
-    /* ── Pagina destra: foto + caption ── */
-    .zine-right {
-      padding: var(--pad-lg) var(--pad) var(--pad);
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-      position: relative;
-    }
-
-    .zine-photo {
-      width: 100%;
-      /* altezza fissa come nella reference — foto che non occupa tutto */
-      height: 55vh;
       overflow: hidden;
-      background-color: var(--champagne);
+      background-color: var(--gray);
+      opacity: 0.9;
+      border-right: 1px solid var(--gray);
     }
 
-    .zine-photo img {
+    .term-photo img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: center;
-      filter: grayscale(20%);
+      filter: grayscale(15%);
     }
 
-    .zine-caption-title {
+    /* Colonna destra: testo + lista */
+    .term-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: var(--pad-lg) var(--pad);
+      overflow-y: auto;
+    }
+
+    .term-intro-block {}
+
+    .term-intro {
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      font-weight: 400;
+      line-height: 1.8;
+      text-align: justify;
+      hyphens: auto;
+      margin-bottom: 2rem;
+      max-width: 480px;
+    }
+
+    .term-intro strong { font-weight: 600; }
+
+    .term-body-text {
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      line-height: 1.85;
+      text-align: justify;
+      hyphens: auto;
+      opacity: 0.65;
+      max-width: 480px;
+    }
+
+    /* Lista numerata corsi — come la reference */
+    .term-list {
+      border-top: 1px solid var(--gray);
+      padding-top: 1.5rem;
+    }
+
+    .term-list-item {
+      display: flex;
+      align-items: baseline;
+      gap: 1.5rem;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid var(--gray);
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+
+    .term-list-item:hover { color: var(--accent); }
+
+    .term-list-num {
+      font-family: var(--font-body);
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      opacity: 0.4;
+      min-width: 3rem;
+    }
+
+    .term-list-name {
       font-family: var(--font-body);
       font-size: 0.85rem;
-      font-weight: 600;
-      letter-spacing: 0.05em;
-      margin-bottom: 0.4rem;
+      font-weight: 400;
+      letter-spacing: 0.03em;
+      flex: 1;
     }
 
-    .zine-caption-text {
-      font-family: var(--font-body);
+    .term-list-arrow {
       font-size: 0.75rem;
-      line-height: 1.7;
-      opacity: 0.6;
+      opacity: 0.3;
+      transition: opacity 0.2s, transform 0.2s;
     }
 
-    /* ── Sezione progetti ── */
-    .zine-projects {
+    .term-list-item:hover .term-list-arrow {
+      opacity: 1;
+      transform: translateX(4px);
+    }
+
+    /* ── PROGETTI ── */
+    .term-projects {
       padding: var(--pad-lg) var(--pad);
-      border-bottom: 1px solid var(--mahogany);
+      border-bottom: 1px solid var(--gray);
     }
 
-    .zine-projects-label {
+    .term-projects-label {
       font-family: var(--font-body);
       font-size: 0.65rem;
       letter-spacing: 0.25em;
@@ -163,14 +172,15 @@
       margin-bottom: 2rem;
     }
 
-    .zine-projects-grid {
+    .term-projects-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 1.5rem;
+      gap: 1px;
+      background-color: var(--gray);
     }
 
-    .zine-project-card {
-      background-color: var(--champagne);
+    .term-project-card {
+      background-color: var(--white);
       aspect-ratio: 4/3;
       position: relative;
       overflow: hidden;
@@ -178,60 +188,81 @@
       transition: transform 0.4s var(--ease);
     }
 
-    .zine-project-card:hover { transform: translateY(-4px); }
+    .term-project-card:hover { transform: scale(1.02); }
 
-    .zine-project-card img {
+    .term-project-card img {
       width: 100%; height: 100%;
       object-fit: cover;
+      filter: grayscale(10%);
+      transition: filter 0.4s;
     }
 
-    .zine-project-info {
+    .term-project-card:hover img { filter: grayscale(0%); }
+
+    /* Card a colore piatto dalla palette */
+    .term-project-card.color-accent { background-color: var(--accent); }
+    .term-project-card.color-gray   { background-color: var(--gray); opacity: 0.4; }
+    .term-project-card.color-black  { background-color: var(--black); }
+
+    .term-project-info {
       position: absolute;
       bottom: 0; left: 0; right: 0;
       padding: 1rem;
-      background: linear-gradient(to top, rgba(60,21,3,0.65), transparent);
-      color: var(--chiffon);
+      background: linear-gradient(to top, rgba(26,26,26,0.7), transparent);
+      color: var(--white);
     }
 
-    .zine-project-info h3 {
+    .term-project-info h3 {
       font-family: var(--font-body);
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       font-weight: 400;
     }
 
-    .zine-project-info span {
+    .term-project-info span {
       font-size: 0.65rem;
-      opacity: 0.7;
+      opacity: 0.65;
       letter-spacing: 0.1em;
       text-transform: uppercase;
     }
 
-    /* ── Nav prev/next ── */
-    .zine-nav {
+    /* Card colore: testo in overlay senza gradiente */
+    .term-project-card.color-accent .term-project-info,
+    .term-project-card.color-black .term-project-info {
+      background: none;
+    }
+
+    /* ── NAV ── */
+    .term-nav {
       display: flex;
       justify-content: space-between;
       padding: 1.5rem var(--pad);
+      border-top: 1px solid var(--gray);
     }
 
-    .zine-nav a {
+    .term-nav a {
       font-family: var(--font-body);
       font-size: 0.75rem;
       letter-spacing: 0.1em;
       transition: color 0.2s;
     }
 
-    .zine-nav a:hover { color: var(--pear); }
+    .term-nav a:hover { color: var(--accent); }
 
     /* Responsive */
     @media (max-width: 768px) {
-      .zine-spread {
+      .term-spread {
         grid-template-columns: 1fr;
+        height: auto;
       }
-      .zine-divider { display: none; }
-      .zine-left { border-bottom: 1px solid var(--pistachio); }
-      .zine-header { grid-template-columns: 1fr 1fr; }
-      .zine-header-center { display: none; }
+      .term-photo {
+        height: 55vw;
+        border-right: none;
+        border-bottom: 1px solid var(--gray);
+      }
+      .term-header { grid-template-columns: 1fr 1fr; }
+      .term-header-center { display: none; }
     }
+
   </style>
 </head>
 <body>
@@ -241,97 +272,131 @@
     <span class="nav-title">MDEF 2026</span>
   </nav>
 
-  <main class="zine-wrapper">
+  <main class="term-wrapper">
 
-    <!-- HEADER ZINE -->
-    <header class="zine-header reveal">
-      <span class="zine-header-left">Term One</span>
-      <span class="zine-header-center">MDEF · Barcelona · 2026</span>
-      <span class="zine-header-right">01</span>
+    <!-- HEADER -->
+    <header class="term-header reveal">
+      <span class="term-header-left">Term One</span>
+      <span class="term-header-center">MDEF · Barcelona · 2026</span>
+      <span class="term-header-right">01</span>
     </header>
 
+    <!-- SPREAD -->
+    <div class="term-spread">
 
-    <!-- SPREAD: testo sinistra | foto destra -->
-    <div class="zine-spread">
-
-      <!-- Pagina sinistra — testo -->
-      <div class="zine-left reveal">
-        <p class="zine-intro">
-          <!-- SOSTITUISCI con la tua intro -->
-          <strong>Welcome.</strong> This space collects the works,
-          reflections and processes of the first term of the
-          Master in Design for Emergent Futures at IAAC, Barcelona.
-        </p>
-
-        <p class="zine-body-text">
-          <!-- SOSTITUISCI con il tuo testo -->
-          Write here what you explored during Term One.
-          What questions did you bring with you? What methods did
-          you use? What perspectives shifted? This is your space —
-          write in a personal tone, like a journal, or more formally,
-          like an abstract. Both work. The important thing is that
-          it sounds like you.
-        </p>
-
-        <span class="zine-page-num zine-page-num--left">2</span>
-      </div>
-
-      <!-- Divisore verticale -->
-      <div class="zine-divider"></div>
-
-      <!-- Pagina destra — foto + caption -->
-      <div class="zine-right reveal">
-
-        <div class="zine-photo">
+      <!-- Foto sinistra -->
+      <div class="term-photo reveal">
+        <!--
+          AGGIUNGI LA TUA IMMAGINE:
           <img src="../images/term1/banner_term1.jpeg" alt="Term One">
-        </div>
-
-        <div>
-          <p class="zine-caption-title">
-            <!-- SOSTITUISCI con il titolo della foto o sezione -->
-            Term One
-          </p>
-          <p class="zine-caption-text">
-            <!-- SOSTITUISCI con una didascalia o lascia vuoto -->
-            A short caption or description of the image
-            or the theme it represents.
-          </p>
-        </div>
-
-        <span class="zine-page-num zine-page-num--right">3</span>
+        -->
+        <img src="../images/term1/banner_term1.jpeg" alt="Term One">
       </div>
 
+      <!-- Testo + lista destra -->
+      <div class="term-content reveal">
+
+        <div class="term-intro-block">
+          <p class="term-intro">
+            <!-- SOSTITUISCI con la tua intro -->
+            <strong>Term One.</strong> This space collects the works,
+            reflections and processes of the first term of the
+            Master in Design for Emergent Futures at IAAC, Barcelona.
+          </p>
+          <p class="term-body-text">
+            <!-- SOSTITUISCI con il tuo testo -->
+            Write here what you explored during Term One — what questions
+            you brought with you, what methods you used, what perspectives
+            shifted. This is your space.
+          </p>
+        </div>
+
+        <!-- Lista corsi — come nella reference -->
+        <div class="term-list">
+          <!--
+            DUPLICA .term-list-item PER OGNI CORSO.
+            Puoi aggiungere href="..." al tag <a> per linkare a una pagina.
+          -->
+          <div class="term-list-item">
+            <span class="term-list-num">No. 01</span>
+            <span class="term-list-name">Course Name Here</span>
+            <span class="term-list-arrow">→</span>
+          </div>
+          <div class="term-list-item">
+            <span class="term-list-num">No. 02</span>
+            <span class="term-list-name">Course Name Here</span>
+            <span class="term-list-arrow">→</span>
+          </div>
+          <div class="term-list-item">
+            <span class="term-list-num">No. 03</span>
+            <span class="term-list-name">Course Name Here</span>
+            <span class="term-list-arrow">→</span>
+          </div>
+          <div class="term-list-item">
+            <span class="term-list-num">No. 04</span>
+            <span class="term-list-name">Course Name Here</span>
+            <span class="term-list-arrow">→</span>
+          </div>
+          <div class="term-list-item">
+            <span class="term-list-num">No. 05</span>
+            <span class="term-list-name">Course Name Here</span>
+            <span class="term-list-arrow">→</span>
+          </div>
+        </div>
+
+      </div>
     </div>
 
 
-    <!-- SEZIONE PROGETTI -->
-    <section class="zine-projects">
-      <p class="zine-projects-label reveal">Projects of the term</p>
+    <!-- PROGETTI -->
+    <section class="term-projects">
+      <p class="term-projects-label reveal">Projects of the term</p>
 
-      <div class="zine-projects-grid">
+      <div class="term-projects-grid">
 
         <!--
-          DUPLICA QUESTO BLOCCO PER OGNI PROGETTO.
-          Per aggiungere immagine:
-          <img src="../images/term1/project-1.jpg" alt="nome">
+          CARD CON IMMAGINE:
+          <div class="term-project-card reveal">
+            <img src="../images/term1/project.jpg" alt="nome">
+            <div class="term-project-info">
+              <h3>Project Title</h3>
+              <span>category · 2026</span>
+            </div>
+          </div>
+
+          CARD A COLORE PIATTO (accent/gray/black):
+          <div class="term-project-card color-accent reveal">
+            <div class="term-project-info">
+              <h3>Project Title</h3>
+              <span>category · 2026</span>
+            </div>
+          </div>
         -->
-        <div class="zine-project-card reveal">
-          <div class="zine-project-info">
+
+        <div class="term-project-card reveal">
+          <div class="term-project-info">
             <h3>Project Title 01</h3>
             <span>category · 2026</span>
           </div>
         </div>
 
-        <div class="zine-project-card reveal">
-          <div class="zine-project-info">
+        <div class="term-project-card color-accent reveal">
+          <div class="term-project-info">
             <h3>Project Title 02</h3>
             <span>category · 2026</span>
           </div>
         </div>
 
-        <div class="zine-project-card reveal">
-          <div class="zine-project-info">
+        <div class="term-project-card reveal">
+          <div class="term-project-info">
             <h3>Project Title 03</h3>
+            <span>category · 2026</span>
+          </div>
+        </div>
+
+        <div class="term-project-card color-gray reveal">
+          <div class="term-project-info">
+            <h3>Project Title 04</h3>
             <span>category · 2026</span>
           </div>
         </div>
@@ -340,8 +405,7 @@
     </section>
 
 
-    <!-- NAV PREV / NEXT -->
-    <nav class="zine-nav">
+    <nav class="term-nav">
       <a href="../index.html">← Index</a>
       <a href="term-2.html">Term Two →</a>
     </nav>
